@@ -1,0 +1,20 @@
+MétodoUsado,FechaYhora,ArchivoDeEntrada,ArchivoDeSalida
+binaryToCsv,[05/10/2025 14:17:50],pruebaBinario.dat,pruebaBinario.csv
+orderBinary,[05/10/2025 14:18:07],pruebaBinario.dat,pruebaBinario_ord.dat
+orderBinaryToCsv,[05/10/2025 14:18:09],pruebaBinario.dat,pruebaBinario_ord.csv
+orderCsv,[05/10/2025 20:09:46],pruebaCsv.csv,pruebaCsv_ord.csv
+csvToBinary,[05/10/2025 20:09:47],pruebaCsv.csv,pruebaCsv.dat
+orderBinary,[05/10/2025 20:13:33],pruebaBinario.dat,pruebaBinario_ord.dat
+orderBinaryToCsv,[05/10/2025 20:13:34],pruebaBinario.dat,pruebaBinario_ord.csv
+binaryToCsv,[05/10/2025 20:13:36],pruebaBinario.dat,pruebaBinario.csv
+csvToBinary,[05/10/2025 20:15:30],pruebaCsv.csv,pruebaCsv.dat
+orderCsv,[05/10/2025 20:15:31],pruebaCsv.csv,pruebaCsv_ord.csv
+orderBinary,[05/10/2025 20:15:57],pruebaBinario.dat,pruebaBinario_ord.dat
+orderBinaryToCsv,[05/10/2025 20:15:57],pruebaBinario.dat,pruebaBinario_ord.csv
+binaryToCsv,[05/10/2025 20:15:58],pruebaBinario.dat,pruebaBinario.csv
+orderCsv,[05/10/2025 20:18:20],pruebaCsv.csv,pruebaCsv_ord.csv
+csvToBinary,[05/10/2025 20:18:21],pruebaCsv.csv,pruebaCsv.dat
+binaryToCsv,[05/10/2025 20:19:09],pruebaBinario.dat,pruebaBinario.csv
+orderBinary,[05/10/2025 20:19:10],pruebaBinario.dat,pruebaBinario_ord.dat
+orderBinaryToCsv,[05/10/2025 20:19:10],pruebaBinario.dat,pruebaBinario_ord.csv
+orderCsv,[05/10/2025 21:04:26],pruebaCsv.csv,pruebaCsv_ord.csv
