@@ -1,26 +1,15 @@
 package views;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import services.Service;
 import utils.FileManager;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import java.awt.*;
 
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-
-import java.awt.GridLayout;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
 
 public class MainView extends JFrame {
 
@@ -66,8 +55,9 @@ public class MainView extends JFrame {
 		lblTipoArchivo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblTipoArchivo.setPreferredSize(new Dimension(100, 35));
 		panelSuperior.add(lblTipoArchivo, BorderLayout.CENTER);
-		
-		JButton btnFileChooser = new JButton("");
+
+        ImageIcon openFolderIcon = new ImageIcon("src\\resources\\abrirCarpeta.png");
+        JButton btnFileChooser = new JButton("",openFolderIcon);
 		btnFileChooser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(service.chooseFile()) {
@@ -79,8 +69,15 @@ public class MainView extends JFrame {
 		});
 		btnFileChooser.setPreferredSize(new Dimension(35, 35));
 		panelSuperior.add(btnFileChooser, BorderLayout.EAST);
-		
-		scrollPane = new JScrollPane();
+        ImageIcon icono = new ImageIcon("src\\resources\\abrirCarpeta.png");
+        Image img = icono.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+        btnFileChooser.setIcon(new ImageIcon(img));
+        btnFileChooser.setBorderPainted(false); // Quita el borde
+        btnFileChooser.setContentAreaFilled(false); // Quita el fondo
+
+
+
+        scrollPane = new JScrollPane();
 		panelSuperior.add(scrollPane, BorderLayout.WEST);
 		scrollPane.setViewportView(textRutaArchivo);
 		
@@ -92,7 +89,7 @@ public class MainView extends JFrame {
 		//(Filas, Columnas, MargenX, MargenY)
 		panelCentral.setLayout(new GridLayout(3, 2, 10, 10));
 		
-		btnCsvToBinario = new JButton("btnCsvToBinario");
+		btnCsvToBinario = new JButton("Convertir Csv a Binario");
 		btnCsvToBinario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				manager.csvToBinary(service.getFileSelected());
@@ -101,7 +98,7 @@ public class MainView extends JFrame {
 		});
 		panelCentral.add(btnCsvToBinario);
 		
-		btnBinarioToCsv = new JButton("btnBinarioToCsv");
+		btnBinarioToCsv = new JButton("Convertir Binario a Csv");
 		btnBinarioToCsv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				manager.binaryToCsv(service.getFileSelected());
@@ -110,7 +107,7 @@ public class MainView extends JFrame {
 		});
 		panelCentral.add(btnBinarioToCsv);
 		
-		btnOrdenarCsv = new JButton("btnOrdenarCsv");
+		btnOrdenarCsv = new JButton("Ordenar Csv");
 		btnOrdenarCsv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				manager.orderCsv(service.getFileSelected());
@@ -119,7 +116,7 @@ public class MainView extends JFrame {
 		});
 		panelCentral.add(btnOrdenarCsv);
 		
-		btnOrdenarBinario = new JButton("btnOrdenarBinario");
+		btnOrdenarBinario = new JButton("Ordenar Binario");
 		btnOrdenarBinario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				manager.orderBinary(service.getFileSelected());
@@ -128,7 +125,7 @@ public class MainView extends JFrame {
 		});
 		panelCentral.add(btnOrdenarBinario);
 		
-		btnBinarioToCsvOrdenado = new JButton("btnBinarioToCsvOrdenado");
+		btnBinarioToCsvOrdenado = new JButton("Convertir Binario a Csv Ordenado");
 		btnBinarioToCsvOrdenado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				manager.orderBinaryToCsv(service.getFileSelected());
@@ -137,7 +134,7 @@ public class MainView extends JFrame {
 		});
 		panelCentral.add(btnBinarioToCsvOrdenado);
 		
-		bntShowLog = new JButton("mostrarLog");
+		bntShowLog = new JButton("Mostrar Log Completo");
 		bntShowLog.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				logView.setVisible(true);
